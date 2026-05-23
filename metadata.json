@@ -1,0 +1,6 @@
+{
+  "name": "Wortschatz",
+  "description": "A playful, Duolingo-style German vocabulary trainer that uses Half-Life Regression (HLR) to teach the 200 most essential words.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
