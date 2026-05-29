@@ -257,6 +257,7 @@ export default function App() {
                   words={words}
                   unlockStatus={unlockStatus}
                   introduceWordFromLearn={introduceWordFromLearn}
+                  registerAnswer={registerAnswer}
                 />
               )}
               {activeTab === 'practice' && (

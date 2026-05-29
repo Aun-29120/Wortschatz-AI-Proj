@@ -47,10 +47,10 @@ export function WordListTab({ words, registerAnswer }: WordListTabProps) {
       return `${Math.round(hours * 60)} mins`;
     }
     if (hours < 24) {
-      return `${Math.round(hours)} hours`;
+      return `${hours.toFixed(1)} hours`;
     }
-    const days = Math.round(hours / 24);
-    return `${days} day${days !== 1 ? 's' : ''}`;
+    const days = (hours / 24).toFixed(1);
+    return `${days} days`;
   };
 
   // Build metrics for headers

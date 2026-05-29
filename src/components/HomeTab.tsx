@@ -14,9 +14,10 @@ interface HomeTabProps {
     hardUnlocked: boolean;
   };
   introduceWordFromLearn: (wordId: string, gotIt: boolean) => void;
+  registerAnswer: (wordId: string, isCorrect: boolean) => void;
 }
 
-export function HomeTab({ words, unlockStatus, introduceWordFromLearn }: HomeTabProps) {
+export function HomeTab({ words, unlockStatus, introduceWordFromLearn, registerAnswer }: HomeTabProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [mascotState, setMascotState] = useState<'idle' | 'correct' | 'wrong' | 'dance'>('idle');
   const [showConfetti, setShowConfetti] = useState(false);
@@ -34,19 +35,37 @@ export function HomeTab({ words, unlockStatus, introduceWordFromLearn }: HomeTab
 
   const allowedCategories = ['Beginner', 'Intermediate', 'Hard'];
 
+  const introducedWords = words.filter(w => w.introduced);
+  const avgRecall = introducedWords.length > 0 
+    ? introducedWords.reduce((sum, w) => sum + w.p, 0) / introducedWords.length 
+    : 1.0;
+  
+  // Strict check: if below 0.6, pace to 0.7 
+  // (we assume if it's below 0.7 we should consolidate, because we don't have persistent hysteresis state in this file)
+  const isConsolidating = avgRecall < 0.7 && introducedWords.length > 5;
+
+  // Decaying words
+  const decayingWords = words.filter((w) => w.introduced && w.p < 0.5 && allowedCategories.includes(w.difficulty));
+  decayingWords.sort((a, b) => a.p - b.p);
+
   // Next word to introduce: un-introduced words in unlocked tiers
-  // Priority: Beginner -> Intermediate -> Hard
   const unintroducedWords = words.filter(
     (w) => !w.introduced && allowedCategories.includes(w.difficulty)
   );
 
-  // Sort by Beginner first, then Intermediate, then Hard
-  unintroducedWords.sort((a, b) => {
-    const tierMap: Record<string, number> = { Beginner: 1, Intermediate: 2, Hard: 3 };
-    return tierMap[a.difficulty] - tierMap[b.difficulty];
-  });
+  // Sort by frequency
+  unintroducedWords.sort((a, b) => a.frequency - b.frequency);
 
-  const activeWord = unintroducedWords[0];
+  let activeWord = null;
+  let isReviewMode = false;
+
+  if (decayingWords.length > 0) {
+    activeWord = decayingWords[0];
+    isReviewMode = true;
+  } else if (!isConsolidating && unintroducedWords.length > 0) {
+    activeWord = unintroducedWords[0];
+    isReviewMode = false;
+  }
 
   const handleGotIt = () => {
     if (!activeWord) return;
@@ -57,7 +76,11 @@ export function HomeTab({ words, unlockStatus, introduceWordFromLearn }: HomeTab
     setShowConfetti(true);
     
     // Increment stats in LocalStorage
-    introduceWordFromLearn(activeWord.id, true);
+    if (isReviewMode) {
+      registerAnswer(activeWord.id, true);
+    } else {
+      introduceWordFromLearn(activeWord.id, true);
+    }
 
     setTimeout(() => {
       setMascotState('idle');
@@ -96,9 +119,13 @@ export function HomeTab({ words, unlockStatus, introduceWordFromLearn }: HomeTab
             Willkommen bei Wortschatz! 🇩🇪
           </h2>
           <p className="text-slate-500 text-sm mt-1 leading-relaxed">
-            {activeWord 
-              ? `Let's practice the essential 200 German words! Currently learning ${activeWord.difficulty} tier.`
-              : "Excellent! You've introduced all currently unlocked German words! Transition to the Practice tab to cement them."
+            {isConsolidating 
+              ? "Consolidating your memory before introducing new words."
+              : isReviewMode
+                ? "Let's review some words you're forgetting before moving on."
+                : activeWord 
+                  ? `Let's practice the essential 200 German words! Currently learning ${activeWord.difficulty} tier.`
+                  : "Excellent! You've introduced all currently unlocked German words! Transition to the Practice tab to cement them."
             }
           </p>
         </div>
@@ -233,8 +260,8 @@ export function HomeTab({ words, unlockStatus, introduceWordFromLearn }: HomeTab
                   style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                 >
                   <div className="flex justify-between">
-                    <span className="text-[10px] uppercase font-black tracking-widest bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full border border-emerald-200">
-                      Answer
+                    <span className={`text-[10px] uppercase font-black tracking-widest px-2 py-0.5 rounded-full border ${isReviewMode ? 'bg-amber-100 text-amber-800 border-amber-200' : 'bg-emerald-100 text-emerald-800 border-emerald-200'}`}>
+                      {isReviewMode ? 'Review — You are forgetting this!' : 'Answer'}
                     </span>
                     <span className="text-[10px] text-slate-400 font-bold">
                       Translation / Tip
@@ -290,11 +317,13 @@ export function HomeTab({ words, unlockStatus, introduceWordFromLearn }: HomeTab
           <div className="bg-white border-4 border-b-8 border-[#F0F0F0] rounded-3xl p-8 flex flex-col items-center text-center space-y-4 shadow-sm w-full">
             <Mascot state="static" size={140} />
             <h3 className="font-sans font-black text-2xl text-[#1A1A1A]">
-              Wunderbar! 🇩🇪🎉
+              {isConsolidating ? 'Time to Practice! 🧠' : 'Wunderbar! 🇩🇪🎉'}
             </h3>
             <p className="text-slate-500 text-sm max-w-sm leading-relaxed">
-              All 200 words have been fully introduced!
-              Go to the <b>Practice Tab</b> to review your knowledge base and keep your recall high!
+              {isConsolidating
+                ? 'Your average recall has dropped below optimal levels. Go to the Practice Tab to consolidate your memory before learning new words!'
+                : 'All 200 words have been fully introduced! Go to the Practice Tab to review your knowledge base and keep your recall high!'
+              }
             </p>
           </div>
         )}

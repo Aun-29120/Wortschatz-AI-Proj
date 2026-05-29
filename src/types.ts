@@ -8,6 +8,7 @@ export interface Word {
   example: string;
   exampleTranslation: string;
   pronunciation: string;
+  frequency: number;
 }
 
 export interface WordProgress {

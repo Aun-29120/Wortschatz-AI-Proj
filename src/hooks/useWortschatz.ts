@@ -10,28 +10,29 @@ const STORAGE_KEY = 'wortschatz_v1';
 export const DEFAULT_THETAS: ThetaWeights = {
   thetaCorrect: 0.55,
   thetaWrong: 0.85,
-  thetaLag: 0.045,
+  thetaLag: 0.01,
   bias: 4.585
 };
 
 export function calculateHalfLife(correct: number, wrong: number, lagHours: number, thetas: ThetaWeights = DEFAULT_THETAS): number {
   const dotProduct = thetas.bias + (thetas.thetaCorrect * correct) - (thetas.thetaWrong * wrong) + (thetas.thetaLag * lagHours);
-  // Cap half-life between 0.5 hours and 2000 hours to avoid extreme exponential explosion or decay
-  return Math.min(2000, Math.max(0.5, Math.pow(2, dotProduct)));
+  // Cap half-life between 0.5 hours and 336 hours to avoid extreme exponential explosion or decay
+  return Math.min(336, Math.max(0.5, Math.pow(2, dotProduct)));
 }
 
 export function calculateRecallProbability(lastSeen: number | null, halfLife: number): number {
-  if (lastSeen === null) return 0.0;
-  const deltaMs = Date.now() - lastSeen;
-  const deltaHours = deltaMs / (1000 * 60 * 60);
+  if (typeof lastSeen !== 'number' || lastSeen <= 0) return 0.0;
+  const deltaHours = (Date.now() - lastSeen) / 3600000;
   return Math.pow(2, -deltaHours / halfLife);
 }
 
 export function runGradientDescent(thetas: ThetaWeights, history: PracticeAttempt[]): ThetaWeights {
-  const LEARNING_RATE = 0.01;
+  const LEARNING_RATE = 0.001;
   const newThetas = { ...thetas };
 
   history.forEach((attempt) => {
+    if (attempt.lagHours > 8760 || isNaN(attempt.lagHours)) return;
+    const lagHours = attempt.lagHours;
     const hl = calculateHalfLife(attempt.correct, attempt.wrong, attempt.lagHours, newThetas);
     const p_predicted = Math.pow(2, -attempt.lagHours / hl);
     const error = attempt.outcome - p_predicted;
@@ -43,9 +44,9 @@ export function runGradientDescent(thetas: ThetaWeights, history: PracticeAttemp
   });
 
   // Clamp thetas to reasonable bounds to prevent runaway drift
-  newThetas.bias = Math.max(1.0, Math.min(10.0, newThetas.bias));
-  newThetas.thetaCorrect = Math.max(0.01, Math.min(3.0, newThetas.thetaCorrect));
-  newThetas.thetaWrong = Math.max(0.01, Math.min(3.0, newThetas.thetaWrong));
+  newThetas.bias = Math.max(3.0, Math.min(8.0, newThetas.bias));
+  newThetas.thetaCorrect = Math.max(0.3, Math.min(2.0, newThetas.thetaCorrect));
+  newThetas.thetaWrong = Math.max(0.3, Math.min(1.5, newThetas.thetaWrong));
   newThetas.thetaLag = Math.max(0.001, Math.min(1.0, newThetas.thetaLag));
 
   return newThetas;
@@ -134,15 +135,28 @@ export function useWortschatz() {
       try {
         const parsed = JSON.parse(saved) as LocalStorageState;
         
+        let thetaResetHappened = false;
+
         const savedThetas = localStorage.getItem('wortschatz_theta');
         if (savedThetas) {
           try {
-            parsed.thetas = JSON.parse(savedThetas);
+            const parsedThetas = JSON.parse(savedThetas);
+            if (parsedThetas.thetaCorrect < 0.3 || parsedThetas.thetaWrong > 1.5 || parsedThetas.bias < 3.0 || parsedThetas.thetaLag > 0.1) {
+              parsed.thetas = DEFAULT_THETAS;
+              localStorage.setItem('wortschatz_theta', JSON.stringify(DEFAULT_THETAS));
+              thetaResetHappened = true;
+            } else {
+              parsed.thetas = parsedThetas;
+            }
           } catch (e) {
             parsed.thetas = DEFAULT_THETAS;
+            localStorage.setItem('wortschatz_theta', JSON.stringify(DEFAULT_THETAS));
+            thetaResetHappened = true;
           }
-        } else if (!parsed.thetas) {
+        } else if (!parsed.thetas || parsed.thetas.thetaLag > 0.1 || parsed.thetas.thetaWrong > 1.0) {
           parsed.thetas = DEFAULT_THETAS;
+          localStorage.setItem('wortschatz_theta', JSON.stringify(DEFAULT_THETAS));
+          thetaResetHappened = true;
         }
 
         const savedHistory = localStorage.getItem('wortschatz_history');
@@ -156,7 +170,13 @@ export function useWortschatz() {
           parsed.history = [];
         }
 
-        // Verify all 200 words exist in the loaded progress
+        // If thetaLag was corrupted, purge the corrupted history as well
+        if (thetaResetHappened && parsed.history && parsed.history.length > 0) {
+          parsed.history = [];
+          localStorage.removeItem('wortschatz_history');
+        }
+
+        // Verify all 200 words exist in the loaded progress and sanitize lastSeen
         let migrationNeeded = false;
         const currentProgress = { ...parsed.progress };
         
@@ -171,8 +191,31 @@ export function useWortschatz() {
               introduced: false
             };
             migrationNeeded = true;
+          } else {
+            // Sanitize corrupt lastSeen (0, null string, negative, etc.)
+            const prog = currentProgress[w.id];
+            if (prog.lastSeen !== null && (typeof prog.lastSeen !== 'number' || prog.lastSeen <= 0)) {
+              prog.lastSeen = null;
+              migrationNeeded = true;
+            }
+            
+            // Recalculate halfLife to purge the old 2000-hour calculation bug
+            //if (prog.halfLife > 96) {
+            //prog.halfLife = 24;
+            //prog.lastSeen = null;
+            //migrationNeeded = true;
+            //}
           }
         });
+
+        if (parsed.history && parsed.history.length > 0) {
+          const validHistory = parsed.history.filter(h => h.lagHours <= 8760);
+          if (validHistory.length !== parsed.history.length) {
+            parsed.history = validHistory;
+            migrationNeeded = true;
+            localStorage.setItem('wortschatz_history', JSON.stringify(validHistory));
+          }
+        }
 
         if (migrationNeeded) {
           parsed.progress = currentProgress;
@@ -354,13 +397,10 @@ export function useWortschatz() {
       };
 
       const now = Date.now();
-      const lastSeenTime = currentWordProg.lastSeen;
       
       // Calculate delta hours since last seen for this word to feed into regression argument
-      let lagHours = 0;
-      if (lastSeenTime !== null) {
-        lagHours = (now - lastSeenTime) / (1000 * 60 * 60);
-      }
+      const lagHours = (typeof currentWordProg.lastSeen === 'number' && currentWordProg.lastSeen > 0) ? (Date.now() - currentWordProg.lastSeen) / 3600000 : 0;
+      const effectiveLagHours = (currentWordProg.correct + currentWordProg.wrong < 3) ? 0 : lagHours;
 
       // Increment counters
       const nextCorrect = isCorrect ? currentWordProg.correct + 1 : currentWordProg.correct;
@@ -371,7 +411,7 @@ export function useWortschatz() {
         wordId,
         correct: currentWordProg.correct,
         wrong: currentWordProg.wrong,
-        lagHours,
+        lagHours: effectiveLagHours, 
         outcome: isCorrect ? 1.0 : 0.0,
         timestamp: now,
       };
@@ -390,7 +430,7 @@ export function useWortschatz() {
       }
 
       // Compute next half-life via HLR
-      const nextHalfLife = calculateHalfLife(nextCorrect, nextWrong, lagHours, currentThetas);
+      const nextHalfLife = calculateHalfLife(nextCorrect, nextWrong, effectiveLagHours, currentThetas);
 
       currentProgress[wordId] = {
         ...currentWordProg,
@@ -461,15 +501,14 @@ export function useWortschatz() {
       
       const currentHistory = [...(prev.history || [])];
       
-      const lastSeenTime = currentWordProg.lastSeen;
-      let lagHours = 0;
-      if (lastSeenTime !== null) lagHours = (now - lastSeenTime) / (1000 * 60 * 60);
+      const lagHours = (typeof currentWordProg.lastSeen === 'number' && currentWordProg.lastSeen > 0) ? (Date.now() - currentWordProg.lastSeen) / 3600000 : 0;
+      const effectiveLagHours = (currentWordProg.correct + currentWordProg.wrong < 3) ? 0 : lagHours;
 
       const newAttempt: PracticeAttempt = {
         wordId,
         correct: currentWordProg.correct,
         wrong: currentWordProg.wrong,
-        lagHours,
+        lagHours: effectiveLagHours,
         outcome: gotIt ? 1.0 : 0.0,
         timestamp: now,
       };
@@ -482,7 +521,7 @@ export function useWortschatz() {
         currentThetas = runGradientDescent(currentThetas, currentHistory);
       }
       
-      const nextHalfLife = calculateHalfLife(nextCorrect, nextWrong, lagHours, currentThetas);
+      const nextHalfLife = calculateHalfLife(nextCorrect, nextWrong, effectiveLagHours, currentThetas)
 
       // Is it a brand new introduction?
       const isBrandNew = !currentWordProg.introduced && gotIt;
@@ -494,7 +533,7 @@ export function useWortschatz() {
         wrong: nextWrong,
         lastSeen: now,
         halfLife: nextHalfLife,
-        introduced: currentWordProg.introduced || gotIt,
+        introduced: true,
       };
 
       // Cheer Audio if gotIt
@@ -524,13 +563,17 @@ export function useWortschatz() {
         triggerDailySnapshot(currentProgress);
       }, 50);
 
-      return {
+      const newState = {
         ...prev,
         progress: currentProgress,
         stats: statsUpdate,
         history: currentHistory,
         thetas: currentThetas,
       };
+      
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(newState));
+      
+      return newState;
     });
   }, [triggerDailySnapshot]);
 

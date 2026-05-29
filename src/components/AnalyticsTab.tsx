@@ -671,7 +671,9 @@ export function AnalyticsTab({ words, snapshots, thetas }: AnalyticsTabProps) {
                       {/* Half life */}
                       <td className="py-2.5 px-4 text-right text-slate-500 font-mono font-bold">
                         {row.introduced 
-                          ? row.halfLife < 24 ? `${Math.round(row.halfLife)}h` : `${Math.round(row.halfLife / 24)}d` 
+                          ? row.halfLife < 24 
+                            ? `${row.halfLife.toFixed(1)}h` 
+                            : `${(row.halfLife / 24).toFixed(1)}d` 
                           : '—'
                         }
                       </td>

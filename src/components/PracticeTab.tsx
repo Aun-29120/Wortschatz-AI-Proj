@@ -140,12 +140,15 @@ export function PracticeTab({ words, registerAnswer }: PracticeTabProps) {
       return `${mins} minute${mins !== 1 ? 's' : ''}`;
     }
     if (hours < 24) {
-      const h = Math.round(hours);
-      return `${h} hour${h !== 1 ? 's' : ''}`;
+      const h = hours.toFixed(1);
+      return `${h} hours`;
     }
-    const days = Math.round(hours / 24);
-    return `${days} day${days !== 1 ? 's' : ''}`;
+    const days = (hours / 24).toFixed(1);
+    return `${days} days`;
   };
+
+  // Find the most recent version of activeWord from the words prop to show updated stats
+  const updatedActiveWord = activeWord ? words.find((w) => w.id === activeWord.id) || activeWord : null;
 
   return (
     <div id="practice-tab-view" className="space-y-6 max-w-xl mx-auto py-2 relative pb-28">
@@ -337,11 +340,11 @@ export function PracticeTab({ words, registerAnswer }: PracticeTabProps) {
                       <p className="text-sm font-black mt-2">
                         {!lastCorrectState && (
                           <span className="font-extrabold text-[#991B1B] block mb-1">
-                            Correct answer: <span className="underline decoration-[#991B1B]">{activeWord.translation}</span>
+                            Correct answer: <span className="underline decoration-[#991B1B]">{updatedActiveWord?.translation}</span>
                           </span>
                         )}
-                        Recall Probability: <span className="font-extrabold text-[#1A1A1A]">{(activeWord.p * 100).toFixed(0)}%</span> • 
-                        Half-life decay: <span className="font-extrabold text-[#1A1A1A]">{formatHalfLife(activeWord.halfLife)}</span>
+                        Recall Probability: <span className="font-extrabold text-[#1A1A1A]">{( (updatedActiveWord?.p || 0) * 100).toFixed(0)}%</span> • 
+                        Half-life decay: <span className="font-extrabold text-[#1A1A1A]">{formatHalfLife(updatedActiveWord?.halfLife || 1)}</span>
                       </p>
                       <p className="text-[10px] text-slate-500 font-bold mt-1">
                         {lastCorrectState 

@@ -3,7 +3,7 @@ import { Word } from './types';
 export const WORDS: Word[] = [
   // --- BEGINNER (70 words) ---
   {
-    id: 'ich',
+    id: 'ich', frequency: 1,
     word: 'ich',
     translation: 'I',
     difficulty: 'Beginner',
@@ -13,7 +13,7 @@ export const WORDS: Word[] = [
     pronunciation: "ikh - Soft 'ch' sound made at the back of the mouth."
   },
   {
-    id: 'du',
+    id: 'du', frequency: 2,
     word: 'du',
     translation: 'you (singular, informal)',
     difficulty: 'Beginner',
@@ -23,7 +23,7 @@ export const WORDS: Word[] = [
     pronunciation: 'doo - Sounds like the English \"do\".'
   },
   {
-    id: 'er',
+    id: 'er', frequency: 3,
     word: 'er',
     translation: 'he',
     difficulty: 'Beginner',
@@ -33,7 +33,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ehr - Soft r, almost like \"air\".'
   },
   {
-    id: 'sie',
+    id: 'sie', frequency: 4,
     word: 'sie',
     translation: 'she / they',
     difficulty: 'Beginner',
@@ -43,7 +43,7 @@ export const WORDS: Word[] = [
     pronunciation: 'zee - Sounds like \"see\".'
   },
   {
-    id: 'es',
+    id: 'es', frequency: 5,
     word: 'es',
     translation: 'it',
     difficulty: 'Beginner',
@@ -53,7 +53,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ess - Rhymes with \"less\".'
   },
   {
-    id: 'wir',
+    id: 'wir', frequency: 6,
     word: 'wir',
     translation: 'we',
     difficulty: 'Beginner',
@@ -63,7 +63,7 @@ export const WORDS: Word[] = [
     pronunciation: 'veer - Sounds like the English \"fear\" but with a W/V sound.'
   },
   {
-    id: 'ihr',
+    id: 'ihr', frequency: 7,
     word: 'ihr',
     translation: 'you (plural, informal)',
     difficulty: 'Beginner',
@@ -73,7 +73,7 @@ export const WORDS: Word[] = [
     pronunciation: 'eer - Sounds like \"ear\".'
   },
   {
-    id: 'sein',
+    id: 'sein', frequency: 8,
     word: 'sein',
     translation: 'to be',
     difficulty: 'Beginner',
@@ -83,7 +83,7 @@ export const WORDS: Word[] = [
     pronunciation: 'zighn - Sounds like the English \"sign\".'
   },
   {
-    id: 'haben',
+    id: 'haben', frequency: 9,
     word: 'haben',
     translation: 'to have',
     difficulty: 'Beginner',
@@ -93,7 +93,7 @@ export const WORDS: Word[] = [
     pronunciation: 'HAH-ben - Open \"ah\" sound, followed by \"ben\".'
   },
   {
-    id: 'werden',
+    id: 'werden', frequency: 10,
     word: 'werden',
     translation: 'to become / will',
     difficulty: 'Beginner',
@@ -103,7 +103,7 @@ export const WORDS: Word[] = [
     pronunciation: 'VAIR-den - \"V\" sound, rhymes with \"fair\" + \"den\".'
   },
   {
-    id: 'koennen',
+    id: 'koennen', frequency: 11,
     word: 'können',
     translation: 'can / to be able to',
     difficulty: 'Beginner',
@@ -113,7 +113,7 @@ export const WORDS: Word[] = [
     pronunciation: 'KURN-en - Rounded vowel, like French \"eu\" in fleur.'
   },
   {
-    id: 'muessen',
+    id: 'muessen', frequency: 12,
     word: 'müssen',
     translation: 'must / to have to',
     difficulty: 'Beginner',
@@ -123,7 +123,7 @@ export const WORDS: Word[] = [
     pronunciation: 'MEW-sen - Rounded u-umlaut, say \"ee\" with lips rounded.'
   },
   {
-    id: 'wollen',
+    id: 'wollen', frequency: 13,
     word: 'wollen',
     translation: 'to want',
     difficulty: 'Beginner',
@@ -133,7 +133,7 @@ export const WORDS: Word[] = [
     pronunciation: 'VOL-len - \"v\" sound, short \"o\" like in \"lost\".'
   },
   {
-    id: 'gehen',
+    id: 'gehen', frequency: 14,
     word: 'gehen',
     translation: 'to go',
     difficulty: 'Beginner',
@@ -143,7 +143,7 @@ export const WORDS: Word[] = [
     pronunciation: 'GAY-en - Long close \"ay\", soft \"h\".'
   },
   {
-    id: 'kommen',
+    id: 'kommen', frequency: 15,
     word: 'kommen',
     translation: 'to come',
     difficulty: 'Beginner',
@@ -153,7 +153,7 @@ export const WORDS: Word[] = [
     pronunciation: 'KOM-men - Short \"o\" sound, double \"m\".'
   },
   {
-    id: 'sehen',
+    id: 'sehen', frequency: 16,
     word: 'sehen',
     translation: 'to see',
     difficulty: 'Beginner',
@@ -163,7 +163,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ZAY-en - Pronounced like \"say\" but with a soft Z.'
   },
   {
-    id: 'machen',
+    id: 'machen', frequency: 17,
     word: 'machen',
     translation: 'to do / make',
     difficulty: 'Beginner',
@@ -173,7 +173,7 @@ export const WORDS: Word[] = [
     pronunciation: "MAKH-en - German 'ch' like loch ness."
   },
   {
-    id: 'geben',
+    id: 'geben', frequency: 18,
     word: 'geben',
     translation: 'to give',
     difficulty: 'Beginner',
@@ -183,7 +183,7 @@ export const WORDS: Word[] = [
     pronunciation: 'GAY-ben - Hard G, long close E.'
   },
   {
-    id: 'nehmen',
+    id: 'nehmen', frequency: 19,
     word: 'nehmen',
     translation: 'to take',
     difficulty: 'Beginner',
@@ -193,7 +193,7 @@ export const WORDS: Word[] = [
     pronunciation: 'NAY-men - Long A sound, silent H.'
   },
   {
-    id: 'sagen',
+    id: 'sagen', frequency: 20,
     word: 'sagen',
     translation: 'to say / tell',
     difficulty: 'Beginner',
@@ -203,7 +203,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ZAH-gen - Soft Z, followed by \"ah\" + \"gen\".'
   },
   {
-    id: 'ja',
+    id: 'ja', frequency: 21,
     word: 'ja',
     translation: 'yes',
     difficulty: 'Beginner',
@@ -213,7 +213,7 @@ export const WORDS: Word[] = [
     pronunciation: 'yah - Sounds like \"yah\".'
   },
   {
-    id: 'nein',
+    id: 'nein', frequency: 22,
     word: 'nein',
     translation: 'no',
     difficulty: 'Beginner',
@@ -223,7 +223,7 @@ export const WORDS: Word[] = [
     pronunciation: 'nine - Sounds exactly like the English \"nine\".'
   },
   {
-    id: 'bitte',
+    id: 'bitte', frequency: 23,
     word: 'bitte',
     translation: 'please / you are welcome',
     difficulty: 'Beginner',
@@ -233,7 +233,7 @@ export const WORDS: Word[] = [
     pronunciation: 'BIT-teh - Short i, soft ending.'
   },
   {
-    id: 'danke',
+    id: 'danke', frequency: 24,
     word: 'danke',
     translation: 'thanks / thank you',
     difficulty: 'Beginner',
@@ -243,7 +243,7 @@ export const WORDS: Word[] = [
     pronunciation: 'DAHN-keh - \"Dahn\" + short \"keh\".'
   },
   {
-    id: 'gut',
+    id: 'gut', frequency: 25,
     word: 'gut',
     translation: 'good',
     difficulty: 'Beginner',
@@ -253,7 +253,7 @@ export const WORDS: Word[] = [
     pronunciation: 'goot - Sounds like English \"goot\".'
   },
   {
-    id: 'schlecht',
+    id: 'schlecht', frequency: 26,
     word: 'schlecht',
     translation: 'bad',
     difficulty: 'Beginner',
@@ -263,7 +263,7 @@ export const WORDS: Word[] = [
     pronunciation: 'shlekht - Sh + lek + soft ch.'
   },
   {
-    id: 'gross',
+    id: 'gross', frequency: 27,
     word: 'groß',
     translation: 'big / large',
     difficulty: 'Beginner',
@@ -273,7 +273,7 @@ export const WORDS: Word[] = [
     pronunciation: 'grohs - Long close O + S-sound.'
   },
   {
-    id: 'klein',
+    id: 'klein', frequency: 28,
     word: 'klein',
     translation: 'small / little',
     difficulty: 'Beginner',
@@ -283,7 +283,7 @@ export const WORDS: Word[] = [
     pronunciation: 'klighn - Sounds like English \"cline\".'
   },
   {
-    id: 'neu',
+    id: 'neu', frequency: 29,
     word: 'neu',
     translation: 'new',
     difficulty: 'Beginner',
@@ -293,7 +293,7 @@ export const WORDS: Word[] = [
     pronunciation: 'noy - Sounds like English \"boy\" with an N.'
   },
   {
-    id: 'alt',
+    id: 'alt', frequency: 30,
     word: 'alt',
     translation: 'old',
     difficulty: 'Beginner',
@@ -303,7 +303,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ahlt - Short A, rolling L, crisp T.'
   },
   {
-    id: 'schnell',
+    id: 'schnell', frequency: 31,
     word: 'schnell',
     translation: 'fast / quick',
     difficulty: 'Beginner',
@@ -313,7 +313,7 @@ export const WORDS: Word[] = [
     pronunciation: 'shnell - Sh + nell.'
   },
   {
-    id: 'langsam',
+    id: 'langsam', frequency: 32,
     word: 'langsam',
     translation: 'slow',
     difficulty: 'Beginner',
@@ -323,7 +323,7 @@ export const WORDS: Word[] = [
     pronunciation: 'LAHNG-zahm - Long A, soft Z.'
   },
   {
-    id: 'viel',
+    id: 'viel', frequency: 33,
     word: 'viel',
     translation: 'much / a lot',
     difficulty: 'Beginner',
@@ -333,7 +333,7 @@ export const WORDS: Word[] = [
     pronunciation: 'feel - Sounds exactly like English \"feel\".'
   },
   {
-    id: 'wenig',
+    id: 'wenig', frequency: 34,
     word: 'wenig',
     translation: 'little / few',
     difficulty: 'Beginner',
@@ -343,7 +343,7 @@ export const WORDS: Word[] = [
     pronunciation: "VAY-nikh - V-sound, long E, soft 'ch' sound at the end."
   },
   {
-    id: 'heute',
+    id: 'heute', frequency: 35,
     word: 'heute',
     translation: 'today',
     difficulty: 'Beginner',
@@ -353,7 +353,7 @@ export const WORDS: Word[] = [
     pronunciation: 'HOY-teh - \"Hoy\" + short \"teh\".'
   },
   {
-    id: 'morgen',
+    id: 'morgen', frequency: 36,
     word: 'morgen',
     translation: 'tomorrow / morning',
     difficulty: 'Beginner',
@@ -363,7 +363,7 @@ export const WORDS: Word[] = [
     pronunciation: 'MOR-gen - Short O, rolled R, soft G.'
   },
   {
-    id: 'gestern',
+    id: 'gestern', frequency: 37,
     word: 'gestern',
     translation: 'yesterday',
     difficulty: 'Beginner',
@@ -373,7 +373,7 @@ export const WORDS: Word[] = [
     pronunciation: 'GESS-tern - Hard G, rhymes with western.'
   },
   {
-    id: 'jetzt',
+    id: 'jetzt', frequency: 38,
     word: 'jetzt',
     translation: 'now',
     difficulty: 'Beginner',
@@ -383,7 +383,7 @@ export const WORDS: Word[] = [
     pronunciation: 'yetst - Rhymes with English \"let\'s\" with a Y start.'
   },
   {
-    id: 'hier',
+    id: 'hier', frequency: 39,
     word: 'hier',
     translation: 'here',
     difficulty: 'Beginner',
@@ -393,7 +393,7 @@ export const WORDS: Word[] = [
     pronunciation: 'heer - Sounds like English \"hear\".'
   },
   {
-    id: 'dort',
+    id: 'dort', frequency: 40,
     word: 'dort',
     translation: 'there',
     difficulty: 'Beginner',
@@ -403,7 +403,7 @@ export const WORDS: Word[] = [
     pronunciation: 'dort - Short O, crisp rt.'
   },
   {
-    id: 'warum',
+    id: 'warum', frequency: 41,
     word: 'warum',
     translation: 'why',
     difficulty: 'Beginner',
@@ -413,7 +413,7 @@ export const WORDS: Word[] = [
     pronunciation: 'vah-ROOM - V-sound, open \"ah\", deep \"room\".'
   },
   {
-    id: 'wann',
+    id: 'wann', frequency: 42,
     word: 'wann',
     translation: 'when',
     difficulty: 'Beginner',
@@ -423,7 +423,7 @@ export const WORDS: Word[] = [
     pronunciation: 'vahn - V-sound, open short \"ah\", double N.'
   },
   {
-    id: 'wo',
+    id: 'wo', frequency: 43,
     word: 'wo',
     translation: 'where',
     difficulty: 'Beginner',
@@ -433,7 +433,7 @@ export const WORDS: Word[] = [
     pronunciation: 'voh - V-sound, long close O.'
   },
   {
-    id: 'wie',
+    id: 'wie', frequency: 44,
     word: 'wie',
     translation: 'how',
     difficulty: 'Beginner',
@@ -443,7 +443,7 @@ export const WORDS: Word[] = [
     pronunciation: 'vee - V-sound, sounds like English \"bee\".'
   },
   {
-    id: 'wer',
+    id: 'wer', frequency: 45,
     word: 'wer',
     translation: 'who',
     difficulty: 'Beginner',
@@ -453,7 +453,7 @@ export const WORDS: Word[] = [
     pronunciation: 'vair - V-sound, sounds like English \"ware\".'
   },
   {
-    id: 'was',
+    id: 'was', frequency: 46,
     word: 'was',
     translation: 'what',
     difficulty: 'Beginner',
@@ -463,7 +463,7 @@ export const WORDS: Word[] = [
     pronunciation: 'vahs - V-sound, open A, sounding like \"vahs\".'
   },
   {
-    id: 'der',
+    id: 'der', frequency: 47,
     word: 'der',
     translation: 'the (masculine)',
     difficulty: 'Beginner',
@@ -473,7 +473,7 @@ export const WORDS: Word[] = [
     pronunciation: 'dair - Sounds like English \"dare\".'
   },
   {
-    id: 'die',
+    id: 'die', frequency: 48,
     word: 'die',
     translation: 'the (feminine/plural)',
     difficulty: 'Beginner',
@@ -483,7 +483,7 @@ export const WORDS: Word[] = [
     pronunciation: 'dee - Sounds like English \"dee\".'
   },
   {
-    id: 'das',
+    id: 'das', frequency: 49,
     word: 'das',
     translation: 'the (neuter)',
     difficulty: 'Beginner',
@@ -493,7 +493,7 @@ export const WORDS: Word[] = [
     pronunciation: 'dahs - Sounds like \"dahs\".'
   },
   {
-    id: 'ein',
+    id: 'ein', frequency: 50,
     word: 'ein',
     translation: 'a / an (masculine/neuter)',
     difficulty: 'Beginner',
@@ -503,7 +503,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ighn - Sounds like English \"line\" without L.'
   },
   {
-    id: 'eine',
+    id: 'eine', frequency: 51,
     word: 'eine',
     translation: 'a / an (feminine)',
     difficulty: 'Beginner',
@@ -513,7 +513,7 @@ export const WORDS: Word[] = [
     pronunciation: 'IGH-neh - \"Eye\" + short \"neh\".'
   },
   {
-    id: 'und',
+    id: 'und', frequency: 52,
     word: 'und',
     translation: 'and',
     difficulty: 'Beginner',
@@ -523,7 +523,7 @@ export const WORDS: Word[] = [
     pronunciation: 'oont - Short U, ending in crisp T sound.'
   },
   {
-    id: 'aber',
+    id: 'aber', frequency: 53,
     word: 'aber',
     translation: 'but',
     difficulty: 'Beginner',
@@ -533,7 +533,7 @@ export const WORDS: Word[] = [
     pronunciation: 'AH-ber - Start with \"ah\", soft ending.'
   },
   {
-    id: 'oder',
+    id: 'oder', frequency: 54,
     word: 'oder',
     translation: 'or',
     difficulty: 'Beginner',
@@ -543,7 +543,7 @@ export const WORDS: Word[] = [
     pronunciation: 'OH-der - Long close O, soft \"der\".'
   },
   {
-    id: 'mit',
+    id: 'mit', frequency: 55,
     word: 'mit',
     translation: 'with',
     difficulty: 'Beginner',
@@ -553,7 +553,7 @@ export const WORDS: Word[] = [
     pronunciation: 'mit - Short i, crisp T.'
   },
   {
-    id: 'fuer',
+    id: 'fuer', frequency: 56,
     word: 'für',
     translation: 'for',
     difficulty: 'Beginner',
@@ -563,7 +563,7 @@ export const WORDS: Word[] = [
     pronunciation: 'feer - Say \"fee\" with rounded lips.'
   },
   {
-    id: 'auf',
+    id: 'auf', frequency: 57,
     word: 'auf',
     translation: 'on / onto / at',
     difficulty: 'Beginner',
@@ -573,7 +573,7 @@ export const WORDS: Word[] = [
     pronunciation: 'owf - Rhymes with English \"cowf\".'
   },
   {
-    id: 'in',
+    id: 'in', frequency: 58,
     word: 'in',
     translation: 'in / into',
     difficulty: 'Beginner',
@@ -583,7 +583,7 @@ export const WORDS: Word[] = [
     pronunciation: 'in - Short i, nasal N.'
   },
   {
-    id: 'an',
+    id: 'an', frequency: 59,
     word: 'an',
     translation: 'at / on / to',
     difficulty: 'Beginner',
@@ -593,7 +593,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ahn - Open short A.'
   },
   {
-    id: 'von',
+    id: 'von', frequency: 60,
     word: 'von',
     translation: 'of / from',
     difficulty: 'Beginner',
@@ -603,7 +603,7 @@ export const WORDS: Word[] = [
     pronunciation: 'fon - F-sound, short O, nasal N.'
   },
   {
-    id: 'zu',
+    id: 'zu', frequency: 61,
     word: 'zu',
     translation: 'to / at / too',
     difficulty: 'Beginner',
@@ -613,7 +613,7 @@ export const WORDS: Word[] = [
     pronunciation: 'tsoo - TS-sound + \"oo\".'
   },
   {
-    id: 'aus',
+    id: 'aus', frequency: 62,
     word: 'aus',
     translation: 'out of / from',
     difficulty: 'Beginner',
@@ -623,7 +623,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ows - Rhymes with English \"house\".'
   },
   {
-    id: 'Tag',
+    id: 'Tag', frequency: 63,
     word: 'Tag',
     translation: 'day',
     difficulty: 'Beginner',
@@ -633,7 +633,7 @@ export const WORDS: Word[] = [
     pronunciation: 'tahk - T-sound, long open A, hard K-sound at end.'
   },
   {
-    id: 'Nacht',
+    id: 'Nacht', frequency: 64,
     word: 'Nacht',
     translation: 'night',
     difficulty: 'Beginner',
@@ -643,7 +643,7 @@ export const WORDS: Word[] = [
     pronunciation: 'nakht - Open short A + throat ch.'
   },
   {
-    id: 'Haus',
+    id: 'Haus', frequency: 65,
     word: 'Haus',
     translation: 'house',
     difficulty: 'Beginner',
@@ -653,7 +653,7 @@ export const WORDS: Word[] = [
     pronunciation: 'hows - Sounds like English \"house\".'
   },
   {
-    id: 'Wasser',
+    id: 'Wasser', frequency: 66,
     word: 'Wasser',
     translation: 'water',
     difficulty: 'Beginner',
@@ -663,7 +663,7 @@ export const WORDS: Word[] = [
     pronunciation: 'VAHS-ser - V-sound, open short A, soft double S.'
   },
   {
-    id: 'Essen',
+    id: 'Essen', frequency: 67,
     word: 'Essen',
     translation: 'food / meal',
     difficulty: 'Beginner',
@@ -673,7 +673,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ESS-en - Short E, soft S, quiet ending.'
   },
   {
-    id: 'Brot',
+    id: 'Brot', frequency: 68,
     word: 'Brot',
     translation: 'bread',
     difficulty: 'Beginner',
@@ -683,7 +683,7 @@ export const WORDS: Word[] = [
     pronunciation: 'broht - Rolled R, long close O, crisp T.'
   },
   {
-    id: 'Mann',
+    id: 'Mann', frequency: 69,
     word: 'Mann',
     translation: 'man',
     difficulty: 'Beginner',
@@ -693,7 +693,7 @@ export const WORDS: Word[] = [
     pronunciation: 'mahn - Sounds like English \"mon\" in monster.'
   },
   {
-    id: 'Frau',
+    id: 'Frau', frequency: 70,
     word: 'Frau',
     translation: 'woman / Mrs',
     difficulty: 'Beginner',
@@ -703,7 +703,7 @@ export const WORDS: Word[] = [
     pronunciation: 'frow - Rolled R, sounds like \"frow\".'
   },
   {
-    id: 'Kind',
+    id: 'Kind', frequency: 71,
     word: 'Kind',
     translation: 'child',
     difficulty: 'Beginner',
@@ -713,7 +713,7 @@ export const WORDS: Word[] = [
     pronunciation: 'kint - Short i, ends with a crisp T sound.'
   },
   {
-    id: 'Apfel',
+    id: 'Apfel', frequency: 72,
     word: 'Apfel',
     translation: 'apple',
     difficulty: 'Beginner',
@@ -725,7 +725,7 @@ export const WORDS: Word[] = [
 
   // --- INTERMEDIATE (80 words) ---
   {
-    id: 'denken',
+    id: 'denken', frequency: 73,
     word: 'denken',
     translation: 'to think',
     difficulty: 'Intermediate',
@@ -735,7 +735,7 @@ export const WORDS: Word[] = [
     pronunciation: 'DEN-ken - Rhymes with English \"Ben\" + \"ken\".'
   },
   {
-    id: 'wissen',
+    id: 'wissen', frequency: 74,
     word: 'wissen',
     translation: 'to know (facts)',
     difficulty: 'Intermediate',
@@ -745,7 +745,7 @@ export const WORDS: Word[] = [
     pronunciation: 'VISS-en - V-sound, short i, soft double S.'
   },
   {
-    id: 'fragen',
+    id: 'fragen', frequency: 75,
     word: 'fragen',
     translation: 'to ask',
     difficulty: 'Intermediate',
@@ -755,7 +755,7 @@ export const WORDS: Word[] = [
     pronunciation: 'FRAH-gen - Rolled R, open A.'
   },
   {
-    id: 'antworten',
+    id: 'antworten', frequency: 76,
     word: 'antworten',
     translation: 'to answer',
     difficulty: 'Intermediate',
@@ -765,7 +765,7 @@ export const WORDS: Word[] = [
     pronunciation: 'AHNT-vor-ten - Open A, V-sound for \"vor\".'
   },
   {
-    id: 'lesen',
+    id: 'lesen', frequency: 77,
     word: 'lesen',
     translation: 'to read',
     difficulty: 'Intermediate',
@@ -775,7 +775,7 @@ export const WORDS: Word[] = [
     pronunciation: 'LAY-zen - Long close E, voiced S (Z-sound).'
   },
   {
-    id: 'schreiben',
+    id: 'schreiben', frequency: 78,
     word: 'schreiben',
     translation: 'to write',
     difficulty: 'Intermediate',
@@ -785,7 +785,7 @@ export const WORDS: Word[] = [
     pronunciation: 'SHRIGH-ben - Sh + rolled r + \"eye\" + ben.'
   },
   {
-    id: 'hoeren',
+    id: 'hoeren', frequency: 79,
     word: 'hören',
     translation: 'to hear / listen',
     difficulty: 'Intermediate',
@@ -795,7 +795,7 @@ export const WORDS: Word[] = [
     pronunciation: 'HURN-en - Rounded O-umlaut, say \"her\" with pursed lips.'
   },
   {
-    id: 'sprechen',
+    id: 'sprechen', frequency: 80,
     word: 'sprechen',
     translation: 'to speak / talk',
     difficulty: 'Intermediate',
@@ -805,7 +805,7 @@ export const WORDS: Word[] = [
     pronunciation: 'SHPREKH-en - Sh + p + rolled r + e + soft ch.'
   },
   {
-    id: 'spielen',
+    id: 'spielen', frequency: 81,
     word: 'spielen',
     translation: 'to play',
     difficulty: 'Intermediate',
@@ -815,7 +815,7 @@ export const WORDS: Word[] = [
     pronunciation: 'SHPEE-len - Sh + p + long close i.'
   },
   {
-    id: 'essen',
+    id: 'essen', frequency: 82,
     word: 'essen',
     translation: 'to eat',
     difficulty: 'Intermediate',
@@ -826,7 +826,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ESS-en - Short E, soft double S.'
   },
   {
-    id: 'trinken',
+    id: 'trinken', frequency: 83,
     word: 'trinken',
     translation: 'to drink',
     difficulty: 'Intermediate',
@@ -836,7 +836,7 @@ export const WORDS: Word[] = [
     pronunciation: 'TRING-ken - Rolled R, nasal ng, crisp K.'
   },
   {
-    id: 'schlafen',
+    id: 'schlafen', frequency: 84,
     word: 'schlafen',
     translation: 'to sleep',
     difficulty: 'Intermediate',
@@ -846,7 +846,7 @@ export const WORDS: Word[] = [
     pronunciation: 'SHLAH-fen - Sh + long A.'
   },
   {
-    id: 'kaufen',
+    id: 'kaufen', frequency: 85,
     word: 'kaufen',
     translation: 'to buy',
     difficulty: 'Intermediate',
@@ -856,7 +856,7 @@ export const WORDS: Word[] = [
     pronunciation: 'KOW-fen - Say \"cow\" + \"fen\".'
   },
   {
-    id: 'arbeiten',
+    id: 'arbeiten', frequency: 86,
     word: 'arbeiten',
     translation: 'to work',
     difficulty: 'Intermediate',
@@ -866,7 +866,7 @@ export const WORDS: Word[] = [
     pronunciation: 'AHR-by-ten - Ar + \"by\" + ten.'
   },
   {
-    id: 'lernen',
+    id: 'lernen', frequency: 87,
     word: 'lernen',
     translation: 'to learn / study',
     difficulty: 'Intermediate',
@@ -876,7 +876,7 @@ export const WORDS: Word[] = [
     pronunciation: 'LAIR-nen - Rhymes with English \"burn\" with L and rolled R.'
   },
   {
-    id: 'helfen',
+    id: 'helfen', frequency: 88,
     word: 'helfen',
     translation: 'to help',
     difficulty: 'Intermediate',
@@ -886,7 +886,7 @@ export const WORDS: Word[] = [
     pronunciation: 'HEL-fen - Crisp H, clear L, soft ending.'
   },
   {
-    id: 'suchen',
+    id: 'suchen', frequency: 89,
     word: 'suchen',
     translation: 'to search / look for',
     difficulty: 'Intermediate',
@@ -896,7 +896,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ZOO-khen - Soft Z, long U, deep throat ch.'
   },
   {
-    id: 'finden',
+    id: 'finden', frequency: 90,
     word: 'finden',
     translation: 'to find',
     difficulty: 'Intermediate',
@@ -906,7 +906,7 @@ export const WORDS: Word[] = [
     pronunciation: 'FIN-den - Short i, nasal N, den ending.'
   },
   {
-    id: 'ueber',
+    id: 'ueber', frequency: 91,
     word: 'über',
     translation: 'over / above / about',
     difficulty: 'Intermediate',
@@ -916,7 +916,7 @@ export const WORDS: Word[] = [
     pronunciation: 'EW-ber - Rounded u-umlaut + ber.'
   },
   {
-    id: 'unter',
+    id: 'unter', frequency: 92,
     word: 'unter',
     translation: 'under / below / among',
     difficulty: 'Intermediate',
@@ -926,7 +926,7 @@ export const WORDS: Word[] = [
     pronunciation: 'OON-ter - Short O-like U, soft ending.'
   },
   {
-    id: 'vor',
+    id: 'vor', frequency: 93,
     word: 'vor',
     translation: 'before / in front of',
     difficulty: 'Intermediate',
@@ -936,7 +936,7 @@ export const WORDS: Word[] = [
     pronunciation: 'for - Sounds exactly like English \"for\" with a soft r.'
   },
   {
-    id: 'nach',
+    id: 'nach', frequency: 94,
     word: 'nach',
     translation: 'after / towards / to',
     difficulty: 'Intermediate',
@@ -946,7 +946,7 @@ export const WORDS: Word[] = [
     pronunciation: "nakh - German 'ch' sound."
   },
   {
-    id: 'bei',
+    id: 'bei', frequency: 95,
     word: 'bei',
     translation: 'at / by / near',
     difficulty: 'Intermediate',
@@ -956,7 +956,7 @@ export const WORDS: Word[] = [
     pronunciation: 'by - Sounds like English \"by\".'
   },
   {
-    id: 'durch',
+    id: 'durch', frequency: 96,
     word: 'durch',
     translation: 'through / by',
     difficulty: 'Intermediate',
@@ -966,7 +966,7 @@ export const WORDS: Word[] = [
     pronunciation: "doorkh - Deep U, soft 'ch' sound."
   },
   {
-    id: 'ohne',
+    id: 'ohne', frequency: 97,
     word: 'ohne',
     translation: 'without',
     difficulty: 'Intermediate',
@@ -976,7 +976,7 @@ export const WORDS: Word[] = [
     pronunciation: 'OH-neh - Long close O, silent H.'
   },
   {
-    id: 'gegen',
+    id: 'gegen', frequency: 98,
     word: 'gegen',
     translation: 'against / towards',
     difficulty: 'Intermediate',
@@ -986,7 +986,7 @@ export const WORDS: Word[] = [
     pronunciation: 'GAY-gen - Hard G, long close E, soft second G.'
   },
   {
-    id: 'wenn',
+    id: 'wenn', frequency: 99,
     word: 'wenn',
     translation: 'if / when',
     difficulty: 'Intermediate',
@@ -996,7 +996,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ven - V-sound, short E.'
   },
   {
-    id: 'weil',
+    id: 'weil', frequency: 100,
     word: 'weil',
     translation: 'because',
     difficulty: 'Intermediate',
@@ -1006,7 +1006,7 @@ export const WORDS: Word[] = [
     pronunciation: 'vile - V-sound, sounds like English \"vile\".'
   },
   {
-    id: 'dass',
+    id: 'dass', frequency: 101,
     word: 'dass',
     translation: 'that (conjunction)',
     difficulty: 'Intermediate',
@@ -1016,7 +1016,7 @@ export const WORDS: Word[] = [
     pronunciation: 'dahs - Short A + soft double S.'
   },
   {
-    id: 'oder_int',
+    id: 'oder_int', frequency: 102,
     word: 'oder',
     translation: 'or',
     difficulty: 'Intermediate',
@@ -1026,7 +1026,7 @@ export const WORDS: Word[] = [
     pronunciation: 'OH-der - Long O, soft R.'
   },
   {
-    id: 'Zeit',
+    id: 'Zeit', frequency: 103,
     word: 'Zeit',
     translation: 'time',
     difficulty: 'Intermediate',
@@ -1036,7 +1036,7 @@ export const WORDS: Word[] = [
     pronunciation: 'tsight - TS-sound + \"sight\".'
   },
   {
-    id: 'Woche',
+    id: 'Woche', frequency: 104,
     word: 'Woche',
     translation: 'week',
     difficulty: 'Intermediate',
@@ -1046,7 +1046,7 @@ export const WORDS: Word[] = [
     pronunciation: 'VOKH-eh - V-sound, short O, soft ch.'
   },
   {
-    id: 'Monat',
+    id: 'Monat', frequency: 105,
     word: 'Monat',
     translation: 'month',
     difficulty: 'Intermediate',
@@ -1056,7 +1056,7 @@ export const WORDS: Word[] = [
     pronunciation: 'MOH-naht - Long close O, long A.'
   },
   {
-    id: 'Jahr',
+    id: 'Jahr', frequency: 106,
     word: 'Jahr',
     translation: 'year',
     difficulty: 'Intermediate',
@@ -1066,7 +1066,7 @@ export const WORDS: Word[] = [
     pronunciation: 'yahr - Y-sound, long close A, silent H.'
   },
   {
-    id: 'Stunde',
+    id: 'Stunde', frequency: 107,
     word: 'Stunde',
     translation: 'hour',
     difficulty: 'Intermediate',
@@ -1076,7 +1076,7 @@ export const WORDS: Word[] = [
     pronunciation: 'SHTOON-deh - Sh + T + oo + N + deh.'
   },
   {
-    id: 'Stadt',
+    id: 'Stadt', frequency: 108,
     word: 'Stadt',
     translation: 'city / town',
     difficulty: 'Intermediate',
@@ -1086,7 +1086,7 @@ export const WORDS: Word[] = [
     pronunciation: 'shtat - Sh + T + short A, crisp T.'
   },
   {
-    id: 'Land',
+    id: 'Land', frequency: 109,
     word: 'Land',
     translation: 'country / land',
     difficulty: 'Intermediate',
@@ -1096,7 +1096,7 @@ export const WORDS: Word[] = [
     pronunciation: 'lahnt - German short A, ends with crisp T sound.'
   },
   {
-    id: 'Auto',
+    id: 'Auto', frequency: 110,
     word: 'Auto',
     translation: 'car',
     difficulty: 'Intermediate',
@@ -1106,7 +1106,7 @@ export const WORDS: Word[] = [
     pronunciation: 'OW-toh - \"Ow\" in cow + \"toe\".'
   },
   {
-    id: 'Buch',
+    id: 'Buch', frequency: 111,
     word: 'Buch',
     translation: 'book',
     difficulty: 'Intermediate',
@@ -1116,7 +1116,7 @@ export const WORDS: Word[] = [
     pronunciation: 'bookh - Long U, deep ch throat sound.'
   },
   {
-    id: 'Geld',
+    id: 'Geld', frequency: 112,
     word: 'Geld',
     translation: 'money',
     difficulty: 'Intermediate',
@@ -1126,7 +1126,7 @@ export const WORDS: Word[] = [
     pronunciation: 'gelt - Hard G, short E, ends in T sound.'
   },
   {
-    id: 'Arbeit',
+    id: 'Arbeit', frequency: 113,
     word: 'Arbeit',
     translation: 'work / job',
     difficulty: 'Intermediate',
@@ -1136,7 +1136,7 @@ export const WORDS: Word[] = [
     pronunciation: 'AHR-bite - Ar + \"bite\".'
   },
   {
-    id: 'Schule',
+    id: 'Schule', frequency: 114,
     word: 'Schule',
     translation: 'school',
     difficulty: 'Intermediate',
@@ -1146,7 +1146,7 @@ export const WORDS: Word[] = [
     pronunciation: 'SHOO-leh - Sh + long U + leh.'
   },
   {
-    id: 'Familie',
+    id: 'Familie', frequency: 115,
     word: 'Familie',
     translation: 'family',
     difficulty: 'Intermediate',
@@ -1156,7 +1156,7 @@ export const WORDS: Word[] = [
     pronunciation: 'fah-MEEL-yeh - Fah + meel + yeh.'
   },
   {
-    id: 'Freund',
+    id: 'Freund', frequency: 116,
     word: 'Freund',
     translation: 'friend',
     difficulty: 'Intermediate',
@@ -1166,7 +1166,7 @@ export const WORDS: Word[] = [
     pronunciation: 'froynt - Fr + \"oy\" + nt.'
   },
   {
-    id: 'Name',
+    id: 'Name', frequency: 117,
     word: 'Name',
     translation: 'name',
     difficulty: 'Intermediate',
@@ -1176,7 +1176,7 @@ export const WORDS: Word[] = [
     pronunciation: 'NAH-meh - Long A, short E ending.'
   },
   {
-    id: 'Nummer',
+    id: 'Nummer', frequency: 118,
     word: 'Nummer',
     translation: 'number',
     difficulty: 'Intermediate',
@@ -1186,7 +1186,7 @@ export const WORDS: Word[] = [
     pronunciation: 'NOOM-mer - Short rounded U, double m.'
   },
   {
-    id: 'Tuer',
+    id: 'Tuer', frequency: 119,
     word: 'Tür',
     translation: 'door',
     difficulty: 'Intermediate',
@@ -1196,7 +1196,7 @@ export const WORDS: Word[] = [
     pronunciation: "teer - Say 'tee' with lips rounded to 'oo'."
   },
   {
-    id: 'Fenster',
+    id: 'Fenster', frequency: 120,
     word: 'Fenster',
     translation: 'window',
     difficulty: 'Intermediate',
@@ -1206,7 +1206,7 @@ export const WORDS: Word[] = [
     pronunciation: 'FEN-ster - Crisp F, short E, ster.'
   },
   {
-    id: 'Tisch',
+    id: 'Tisch', frequency: 121,
     word: 'Tisch',
     translation: 'table',
     difficulty: 'Intermediate',
@@ -1216,7 +1216,7 @@ export const WORDS: Word[] = [
     pronunciation: 'tish - Sounds like English \"dish\" but with a T.'
   },
   {
-    id: 'Stuhl',
+    id: 'Stuhl', frequency: 122,
     word: 'Stuhl',
     translation: 'chair',
     difficulty: 'Intermediate',
@@ -1226,7 +1226,7 @@ export const WORDS: Word[] = [
     pronunciation: 'shtool - Sh + T + long U + rolling L.'
   },
   {
-    id: 'Bett',
+    id: 'Bett', frequency: 123,
     word: 'Bett',
     translation: 'bed',
     difficulty: 'Intermediate',
@@ -1236,7 +1236,7 @@ export const WORDS: Word[] = [
     pronunciation: 'bet - Same as English \"bet\".'
   },
   {
-    id: 'Telefon',
+    id: 'Telefon', frequency: 124,
     word: 'Telefon',
     translation: 'telephone / phone',
     difficulty: 'Intermediate',
@@ -1246,7 +1246,7 @@ export const WORDS: Word[] = [
     pronunciation: 'tel-eh-FOHN - Long close O.'
   },
   {
-    id: 'Strasse',
+    id: 'Strasse', frequency: 125,
     word: 'Straße',
     translation: 'street / road',
     difficulty: 'Intermediate',
@@ -1256,7 +1256,7 @@ export const WORDS: Word[] = [
     pronunciation: 'SHTRAH-seh - Sh + T + rolled R + long A + seh.'
   },
   {
-    id: 'Bahnhof',
+    id: 'Bahnhof', frequency: 126,
     word: 'Bahnhof',
     translation: 'train station',
     difficulty: 'Intermediate',
@@ -1266,7 +1266,7 @@ export const WORDS: Word[] = [
     pronunciation: 'BAHN-hohf - \"Bahn\" (open A) + \"hohf\" (long O).'
   },
   {
-    id: 'Supermarkt',
+    id: 'Supermarkt', frequency: 127,
     word: 'Supermarkt',
     translation: 'supermarket',
     difficulty: 'Intermediate',
@@ -1276,7 +1276,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ZOO-per-markt - Soft Z, open A in markt.'
   },
   {
-    id: 'Restaurant',
+    id: 'Restaurant', frequency: 128,
     word: 'Restaurant',
     translation: 'restaurant',
     difficulty: 'Intermediate',
@@ -1286,7 +1286,7 @@ export const WORDS: Word[] = [
     pronunciation: 'res-tow-RAHNT - French-like ending.'
   },
   {
-    id: 'Zimmer',
+    id: 'Zimmer', frequency: 129,
     word: 'Zimmer',
     translation: 'room',
     difficulty: 'Intermediate',
@@ -1296,7 +1296,7 @@ export const WORDS: Word[] = [
     pronunciation: 'TSIM-mer - TS-sound + short i + mer.'
   },
   {
-    id: 'Kueche',
+    id: 'Kueche', frequency: 130,
     word: 'Küche',
     translation: 'kitchen',
     difficulty: 'Intermediate',
@@ -1306,7 +1306,7 @@ export const WORDS: Word[] = [
     pronunciation: 'KEW-kheh - Rounded U + soft ch.'
   },
   {
-    id: 'Schluessel',
+    id: 'Schluessel', frequency: 131,
     word: 'Schlüssel',
     translation: 'key',
     difficulty: 'Intermediate',
@@ -1316,7 +1316,7 @@ export const WORDS: Word[] = [
     pronunciation: 'SHLEW-sel - Sh + rounded short U + sel.'
   },
   {
-    id: 'Brief',
+    id: 'Brief', frequency: 132,
     word: 'Brief',
     translation: 'letter',
     difficulty: 'Intermediate',
@@ -1326,7 +1326,7 @@ export const WORDS: Word[] = [
     pronunciation: 'breef - Sounds exactly like English \"brief\".'
   },
   {
-    id: 'Musik',
+    id: 'Musik', frequency: 133,
     word: 'Musik',
     translation: 'music',
     difficulty: 'Intermediate',
@@ -1336,7 +1336,7 @@ export const WORDS: Word[] = [
     pronunciation: 'moo-ZEEK - Soft Z, long close E.'
   },
   {
-    id: 'Film',
+    id: 'Film', frequency: 134,
     word: 'Film',
     translation: 'movie / film',
     difficulty: 'Intermediate',
@@ -1346,7 +1346,7 @@ export const WORDS: Word[] = [
     pronunciation: 'film - Sounds exactly like \"film\".'
   },
   {
-    id: 'Sport',
+    id: 'Sport', frequency: 135,
     word: 'Sport',
     translation: 'sports',
     difficulty: 'Intermediate',
@@ -1356,7 +1356,7 @@ export const WORDS: Word[] = [
     pronunciation: 'shport - Sh + P + short O + crisp rt.'
   },
   {
-    id: 'Spiel_noun',
+    id: 'Spiel_noun', frequency: 136,
     word: 'Spiel',
     translation: 'game / play',
     difficulty: 'Intermediate',
@@ -1366,7 +1366,7 @@ export const WORDS: Word[] = [
     pronunciation: 'shpeel - Sh + P + long close I.'
   },
   {
-    id: 'Reise',
+    id: 'Reise', frequency: 137,
     word: 'Reise',
     translation: 'trip / journey',
     difficulty: 'Intermediate',
@@ -1376,7 +1376,7 @@ export const WORDS: Word[] = [
     pronunciation: 'RY-zeh - \"Rye\" + voiced S (Z-sound) + eh.'
   },
   {
-    id: 'Wetter',
+    id: 'Wetter', frequency: 138,
     word: 'Wetter',
     translation: 'weather',
     difficulty: 'Intermediate',
@@ -1386,7 +1386,7 @@ export const WORDS: Word[] = [
     pronunciation: 'VET-ter - V-sound, short E, soft ter.'
   },
   {
-    id: 'Sonne',
+    id: 'Sonne', frequency: 139,
     word: 'Sonne',
     translation: 'sun',
     difficulty: 'Intermediate',
@@ -1396,7 +1396,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ZON-neh - Voiced S (Z-sound), short O, neh.'
   },
   {
-    id: 'Regen',
+    id: 'Regen', frequency: 140,
     word: 'Regen',
     translation: 'rain',
     difficulty: 'Intermediate',
@@ -1406,7 +1406,7 @@ export const WORDS: Word[] = [
     pronunciation: 'RAY-gen - Long close E, rolling R, gen.'
   },
   {
-    id: 'Wind',
+    id: 'Wind', frequency: 141,
     word: 'Wind',
     translation: 'wind',
     difficulty: 'Intermediate',
@@ -1416,7 +1416,7 @@ export const WORDS: Word[] = [
     pronunciation: 'vint - V-sound, short i, ends with crisp T sound.'
   },
   {
-    id: 'Schnee',
+    id: 'Schnee', frequency: 142,
     word: 'Schnee',
     translation: 'snow',
     difficulty: 'Intermediate',
@@ -1426,7 +1426,7 @@ export const WORDS: Word[] = [
     pronunciation: 'shnay - Sh + long close E.'
   },
   {
-    id: 'Himmel',
+    id: 'Himmel', frequency: 143,
     word: 'Himmel',
     translation: 'sky / heaven',
     difficulty: 'Intermediate',
@@ -1436,7 +1436,7 @@ export const WORDS: Word[] = [
     pronunciation: 'HIM-mel - Crisp H, short i, mel.'
   },
   {
-    id: 'Erde',
+    id: 'Erde', frequency: 144,
     word: 'Erde',
     translation: 'earth / soil',
     difficulty: 'Intermediate',
@@ -1446,7 +1446,7 @@ export const WORDS: Word[] = [
     pronunciation: 'AIR-deh - Air + deh.'
   },
   {
-    id: 'Meer',
+    id: 'Meer', frequency: 145,
     word: 'Meer',
     translation: 'sea / ocean',
     difficulty: 'Intermediate',
@@ -1456,7 +1456,7 @@ export const WORDS: Word[] = [
     pronunciation: 'mair - Soft R, sounds like English \"mare\".'
   },
   {
-    id: 'Berg',
+    id: 'Berg', frequency: 146,
     word: 'Berg',
     translation: 'mountain',
     difficulty: 'Intermediate',
@@ -1466,7 +1466,7 @@ export const WORDS: Word[] = [
     pronunciation: 'berk - Rolled R, ending with K sound.'
   },
   {
-    id: 'Fluss',
+    id: 'Fluss', frequency: 147,
     word: 'Fluss',
     translation: 'river',
     difficulty: 'Intermediate',
@@ -1476,7 +1476,7 @@ export const WORDS: Word[] = [
     pronunciation: 'floos - Rolled R, short U, soft S.'
   },
   {
-    id: 'Tier',
+    id: 'Tier', frequency: 148,
     word: 'Tier',
     translation: 'animal',
     difficulty: 'Intermediate',
@@ -1486,7 +1486,7 @@ export const WORDS: Word[] = [
     pronunciation: 'teer - Sound like English \"tear\" but crisp T.'
   },
   {
-    id: 'Hund',
+    id: 'Hund', frequency: 149,
     word: 'Hund',
     translation: 'dog',
     difficulty: 'Intermediate',
@@ -1496,7 +1496,7 @@ export const WORDS: Word[] = [
     pronunciation: 'hoont - Soft rounded U, ending with crisp T sound.'
   },
   {
-    id: 'Katze',
+    id: 'Katze', frequency: 150,
     word: 'Katze',
     translation: 'cat',
     difficulty: 'Intermediate',
@@ -1508,7 +1508,7 @@ export const WORDS: Word[] = [
 
   // --- HARD (50 words) ---
   {
-    id: 'verkaufen',
+    id: 'verkaufen', frequency: 151,
     word: 'verkaufen',
     translation: 'to sell',
     difficulty: 'Hard',
@@ -1518,7 +1518,7 @@ export const WORDS: Word[] = [
     pronunciation: 'fair-KOW-fen - F-sound for \"ver\" + kow-fen.'
   },
   {
-    id: 'Krankenhaus',
+    id: 'Krankenhaus', frequency: 152,
     word: 'Krankenhaus',
     translation: 'hospital',
     difficulty: 'Hard',
@@ -1528,7 +1528,7 @@ export const WORDS: Word[] = [
     pronunciation: 'KRANG-ken-hows - Literally \"sick-house\".'
   },
   {
-    id: 'Hotel',
+    id: 'Hotel', frequency: 153,
     word: 'Hotel',
     translation: 'hotel',
     difficulty: 'Hard',
@@ -1538,7 +1538,7 @@ export const WORDS: Word[] = [
     pronunciation: 'hoh-TEL - Stress on the second syllable.'
   },
   {
-    id: 'Flughafen',
+    id: 'Flughafen', frequency: 154,
     word: 'Flughafen',
     translation: 'airport',
     difficulty: 'Hard',
@@ -1548,7 +1548,7 @@ export const WORDS: Word[] = [
     pronunciation: 'FLOOCH-hah-fen - Literally \"flight-harbor\".'
   },
   {
-    id: 'Kirche',
+    id: 'Kirche', frequency: 155,
     word: 'Kirche',
     translation: 'church',
     difficulty: 'Hard',
@@ -1558,7 +1558,7 @@ export const WORDS: Word[] = [
     pronunciation: 'KEER-kheh - Soft R, followed by soft ch.'
   },
   {
-    id: 'Park',
+    id: 'Park', frequency: 156,
     word: 'Park',
     translation: 'park',
     difficulty: 'Hard',
@@ -1568,7 +1568,7 @@ export const WORDS: Word[] = [
     pronunciation: 'park - Rolled R, crisp K.'
   },
   {
-    id: 'Garten',
+    id: 'Garten', frequency: 157,
     word: 'Garten',
     translation: 'garden',
     difficulty: 'Hard',
@@ -1578,7 +1578,7 @@ export const WORDS: Word[] = [
     pronunciation: 'GAHR-ten - German A, rolled R.'
   },
   {
-    id: 'Bad',
+    id: 'Bad', frequency: 158,
     word: 'Bad',
     translation: 'bath / bathroom',
     difficulty: 'Hard',
@@ -1588,7 +1588,7 @@ export const WORDS: Word[] = [
     pronunciation: 'baht - Long A, ends in crisp T sound.'
   },
   {
-    id: 'Treppe',
+    id: 'Treppe', frequency: 159,
     word: 'Treppe',
     translation: 'stairs / staircase',
     difficulty: 'Hard',
@@ -1598,7 +1598,7 @@ export const WORDS: Word[] = [
     pronunciation: 'TREP-peh - Rolled R, short E, double P.'
   },
   {
-    id: 'Paket',
+    id: 'Paket', frequency: 160,
     word: 'Paket',
     translation: 'package / parcel',
     difficulty: 'Hard',
@@ -1608,7 +1608,7 @@ export const WORDS: Word[] = [
     pronunciation: 'pah-KAYT - Open A, long E-sound + crisp T.'
   },
   {
-    id: 'Zeitung',
+    id: 'Zeitung', frequency: 161,
     word: 'Zeitung',
     translation: 'newspaper',
     difficulty: 'Hard',
@@ -1618,7 +1618,7 @@ export const WORDS: Word[] = [
     pronunciation: 'TSIGH-toong - TS-sound, sigh + toong.'
   },
   {
-    id: 'Urlaub',
+    id: 'Urlaub', frequency: 162,
     word: 'Urlaub',
     translation: 'vacation / holiday',
     difficulty: 'Hard',
@@ -1628,7 +1628,7 @@ export const WORDS: Word[] = [
     pronunciation: 'OOR-lowp - \"Oor\" + cow-like \"low\" with a P at end.'
   },
   {
-    id: 'Vogel',
+    id: 'Vogel', frequency: 163,
     word: 'Vogel',
     translation: 'bird',
     difficulty: 'Hard',
@@ -1638,7 +1638,7 @@ export const WORDS: Word[] = [
     pronunciation: 'FOH-gel - F-sound, long close O, gel.'
   },
   {
-    id: 'Baum',
+    id: 'Baum', frequency: 164,
     word: 'Baum',
     translation: 'tree',
     difficulty: 'Hard',
@@ -1648,7 +1648,7 @@ export const WORDS: Word[] = [
     pronunciation: 'bowm - Sounds like English \"how\" with a B + M.'
   },
   {
-    id: 'Blume',
+    id: 'Blume', frequency: 165,
     word: 'Blume',
     translation: 'flower',
     difficulty: 'Hard',
@@ -1658,7 +1658,7 @@ export const WORDS: Word[] = [
     pronunciation: 'BLOO-meh - Long U, short E ending.'
   },
   {
-    id: 'Rot',
+    id: 'Rot', frequency: 166,
     word: 'Rot',
     translation: 'Red',
     difficulty: 'Beginner',
@@ -1668,7 +1668,7 @@ export const WORDS: Word[] = [
     pronunciation: 'roht - Rolled R, long close O, crisp T.'
   },
   {
-    id: 'Blau',
+    id: 'Blau', frequency: 167,
     word: 'Blau',
     translation: 'Blue',
     difficulty: 'Beginner',
@@ -1678,7 +1678,7 @@ export const WORDS: Word[] = [
     pronunciation: 'blow - Bl + au (sounds like cow).'
   },
   {
-    id: 'Gruen',
+    id: 'Gruen', frequency: 168,
     word: 'Grün',
     translation: 'Green',
     difficulty: 'Beginner',
@@ -1688,7 +1688,7 @@ export const WORDS: Word[] = [
     pronunciation: "green - Say 'gree' with lips rounded to 'oo'."
   },
   {
-    id: 'Schwarz',
+    id: 'Schwarz', frequency: 169,
     word: 'Schwarz',
     translation: 'Black',
     difficulty: 'Beginner',
@@ -1698,7 +1698,7 @@ export const WORDS: Word[] = [
     pronunciation: 'shvarts - Sh + V-sound + arts.'
   },
   {
-    id: 'Weiss',
+    id: 'Weiss', frequency: 170,
     word: 'Weiß',
     translation: 'White',
     difficulty: 'Beginner',
@@ -1708,7 +1708,7 @@ export const WORDS: Word[] = [
     pronunciation: 'vice - V-sound, rhymes with English \"rice\".'
   },
   {
-    id: 'Wichtig',
+    id: 'Wichtig', frequency: 171,
     word: 'wichtig',
     translation: 'important',
     difficulty: 'Hard',
@@ -1718,7 +1718,7 @@ export const WORDS: Word[] = [
     pronunciation: 'VIKH-tikh - V-sound, short I, throat ch, tikh.'
   },
   {
-    id: 'Moeglich',
+    id: 'Moeglich', frequency: 172,
     word: 'möglich',
     translation: 'possible',
     difficulty: 'Hard',
@@ -1728,7 +1728,7 @@ export const WORDS: Word[] = [
     pronunciation: 'MURG-likh - Rounded O + lick + soft ch.'
   },
   {
-    id: 'Einfach',
+    id: 'Einfach', frequency: 173,
     word: 'einfach',
     translation: 'easy / simple',
     difficulty: 'Hard',
@@ -1738,7 +1738,7 @@ export const WORDS: Word[] = [
     pronunciation: 'IGHN-fakh - \"Eye-n\" + fakh.'
   },
   {
-    id: 'Schwierig',
+    id: 'Schwierig', frequency: 174,
     word: 'schwierig',
     translation: 'difficult / hard',
     difficulty: 'Hard',
@@ -1748,7 +1748,7 @@ export const WORDS: Word[] = [
     pronunciation: "SHVEE-rikh - Sh + V-sound + ee + R + soft 'ch'."
   },
   {
-    id: 'Schoen',
+    id: 'Schoen', frequency: 175,
     word: 'schön',
     translation: 'beautiful / nice',
     difficulty: 'Hard',
@@ -1758,7 +1758,7 @@ export const WORDS: Word[] = [
     pronunciation: "shurn - Say 'shee' with lips rounded to 'oo'."
   },
   {
-    id: 'Interessant',
+    id: 'Interessant', frequency: 176,
     word: 'interessant',
     translation: 'interesting',
     difficulty: 'Hard',
@@ -1768,7 +1768,7 @@ export const WORDS: Word[] = [
     pronunciation: 'in-te-res-SAHNT - Stress on the last syllable.'
   },
   {
-    id: 'Natuerlich',
+    id: 'Natuerlich', frequency: 177,
     word: 'natürlich',
     translation: 'natural / of course',
     difficulty: 'Hard',
@@ -1778,7 +1778,7 @@ export const WORDS: Word[] = [
     pronunciation: 'nah-TEER-likh - Rounded U, lick + ch.'
   },
   {
-    id: 'Eigentlich',
+    id: 'Eigentlich', frequency: 178,
     word: 'eigentlich',
     translation: 'actually / really',
     difficulty: 'Hard',
@@ -1788,7 +1788,7 @@ export const WORDS: Word[] = [
     pronunciation: 'IGH-gent-likh - Eye-gent-lick-ch.'
   },
   {
-    id: 'Vielleicht',
+    id: 'Vielleicht', frequency: 179,
     word: 'vielleicht',
     translation: 'perhaps / maybe',
     difficulty: 'Hard',
@@ -1798,7 +1798,7 @@ export const WORDS: Word[] = [
     pronunciation: 'fee-LIGHT - F-sound starting, rhymes with english \"light\".'
   },
   {
-    id: 'Trotzdem',
+    id: 'Trotzdem', frequency: 180,
     word: 'trotzdem',
     translation: 'nevertheless / anyway',
     difficulty: 'Hard',
@@ -1808,7 +1808,7 @@ export const WORDS: Word[] = [
     pronunciation: 'TROTS-dem - Short O, crisp TS-sound + dem.'
   },
   {
-    id: 'Obwohl',
+    id: 'Obwohl', frequency: 181,
     word: 'obwohl',
     translation: 'although',
     difficulty: 'Hard',
@@ -1818,7 +1818,7 @@ export const WORDS: Word[] = [
     pronunciation: 'op-VOHL - P-sound for \"ob\", V-sound + L.'
   },
   {
-    id: 'Dennoch',
+    id: 'Dennoch', frequency: 182,
     word: 'dennoch',
     translation: 'yet / still / nevertheless',
     difficulty: 'Hard',
@@ -1828,7 +1828,7 @@ export const WORDS: Word[] = [
     pronunciation: 'DEN-nokh - Den + short O + throat ch.'
   },
   {
-    id: 'Ausserdem',
+    id: 'Ausserdem', frequency: 183,
     word: 'außerdem',
     translation: 'besides / in addition',
     difficulty: 'Hard',
@@ -1838,7 +1838,7 @@ export const WORDS: Word[] = [
     pronunciation: 'OW-ser-dem - \"Ow\" in cow + ser-dem.'
   },
   {
-    id: 'Allerdings',
+    id: 'Allerdings', frequency: 184,
     word: 'allerdings',
     translation: 'however / indeed',
     difficulty: 'Hard',
@@ -1848,7 +1848,7 @@ export const WORDS: Word[] = [
     pronunciation: 'al-ler-DINGSS - Al + ler + dingss.'
   },
   {
-    id: 'Deshalb',
+    id: 'Deshalb', frequency: 185,
     word: 'deshalb',
     translation: 'therefore / that is why',
     difficulty: 'Hard',
@@ -1858,7 +1858,7 @@ export const WORDS: Word[] = [
     pronunciation: 'DESS-halp - Dess + hal + crisp P sound.'
   },
   {
-    id: 'Deswegen',
+    id: 'Deswegen', frequency: 186,
     word: 'deswegen',
     translation: 'therefore / because of that',
     difficulty: 'Hard',
@@ -1868,7 +1868,7 @@ export const WORDS: Word[] = [
     pronunciation: 'DESS-vay-gen - Dess + vay + gen.'
   },
   {
-    id: 'Inzwischen',
+    id: 'Inzwischen', frequency: 187,
     word: 'inzwischen',
     translation: 'meanwhile / by now',
     difficulty: 'Hard',
@@ -1878,7 +1878,7 @@ export const WORDS: Word[] = [
     pronunciation: 'in-TSVISH-en - TS + V-sound + sh + en.'
   },
   {
-    id: 'Uebrigens',
+    id: 'Uebrigens', frequency: 188,
     word: 'übrigens',
     translation: 'by the way / incidentally',
     difficulty: 'Hard',
@@ -1888,7 +1888,7 @@ export const WORDS: Word[] = [
     pronunciation: 'EW-brik-enss - Rounded U + brik + enss.'
   },
   {
-    id: 'Immerhin',
+    id: 'Immerhin', frequency: 189,
     word: 'immerhin',
     translation: 'after all / at least',
     difficulty: 'Hard',
@@ -1898,7 +1898,7 @@ export const WORDS: Word[] = [
     pronunciation: 'im-mer-HIN - Rhymes with English \"inner-pin\".'
   },
   {
-    id: 'Schliesslich',
+    id: 'Schliesslich', frequency: 190,
     word: 'schließlich',
     translation: 'eventually / finally',
     difficulty: 'Hard',
@@ -1908,7 +1908,7 @@ export const WORDS: Word[] = [
     pronunciation: 'SHLEESS-likh - Sh + leess + lick-ch.'
   },
   {
-    id: 'Zunaechst',
+    id: 'Zunaechst', frequency: 191,
     word: 'zunächst',
     translation: 'initially / first of all',
     difficulty: 'Hard',
@@ -1918,7 +1918,7 @@ export const WORDS: Word[] = [
     pronunciation: 'tsoo-NAYKHST - TS-sound + naykhst.'
   },
   {
-    id: 'Anschliessend',
+    id: 'Anschliessend', frequency: 192,
     word: 'anschließend',
     translation: 'subsequently / afterwards',
     difficulty: 'Hard',
@@ -1928,7 +1928,7 @@ export const WORDS: Word[] = [
     pronunciation: 'AHN-shleess-ent - Open ahn, shleess, ending d as T.'
   },
   {
-    id: 'Waehrenddessen',
+    id: 'Waehrenddessen', frequency: 193,
     word: 'währenddessen',
     translation: 'meanwhile / in the meantime',
     difficulty: 'Hard',
@@ -1938,7 +1938,7 @@ export const WORDS: Word[] = [
     pronunciation: 'VAIR-ent-dess-en - V-sound starting.'
   },
   {
-    id: 'Gleichzeitig',
+    id: 'Gleichzeitig', frequency: 194,
     word: 'gleichzeitig',
     translation: 'simultaneously / at the same time',
     difficulty: 'Hard',
@@ -1948,7 +1948,7 @@ export const WORDS: Word[] = [
     pronunciation: 'GLYKH-tsigh-tikh - Glykh + tsigh + tikh.'
   },
   {
-    id: 'Entsprechend',
+    id: 'Entsprechend', frequency: 195,
     word: 'entsprechend',
     translation: 'accordingly / corresponding',
     difficulty: 'Hard',
@@ -1958,7 +1958,7 @@ export const WORDS: Word[] = [
     pronunciation: 'ent-SHPREKH-ent - Ent + shprekh + ent.'
   },
   {
-    id: 'Hinsichtlich',
+    id: 'Hinsichtlich', frequency: 196,
     word: 'hinsichtlich',
     translation: 'with regard to / regarding',
     difficulty: 'Hard',
@@ -1968,7 +1968,7 @@ export const WORDS: Word[] = [
     pronunciation: 'HIN-zicht-lich - Hin + zicht + lich.'
   },
   {
-    id: 'Bezueglich',
+    id: 'Bezueglich', frequency: 197,
     word: 'bezüglich',
     translation: 'concerning / regarding',
     difficulty: 'Hard',
@@ -1978,7 +1978,7 @@ export const WORDS: Word[] = [
     pronunciation: 'beh-TSEEG-likh - TS-sound, rounded E, lick-ch.'
   },
   {
-    id: 'Gegebenenfalls',
+    id: 'Gegebenenfalls', frequency: 198,
     word: 'gegebenenfalls',
     translation: 'if necessary / potentially',
     difficulty: 'Hard',
@@ -1988,7 +1988,7 @@ export const WORDS: Word[] = [
     pronunciation: 'gheh-GAY-ben-en-falls - Literally \"given-case-case\".'
   },
   {
-    id: 'Beziehungsweise',
+    id: 'Beziehungsweise', frequency: 199,
     word: 'beziehungsweise',
     translation: 'or / respectively',
     difficulty: 'Hard',
@@ -1998,7 +1998,7 @@ export const WORDS: Word[] = [
     pronunciation: 'beh-TSEE-oongs-vy-zeh - Very common spoken/written shorthand.'
   },
   {
-    id: 'Dementsprechend',
+    id: 'Dementsprechend', frequency: 200,
     word: 'dementsprechend',
     translation: 'correspondingly / accordingly',
     difficulty: 'Hard',
